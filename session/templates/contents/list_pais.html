@@ -1,0 +1,122 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/list_pais.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% endblock head %}
+
+{% block content %}
+<div class="content">
+    <div class="encabezado">
+        <img class="img-fondo" src="{% static 'img/img-ecuador 2.jpg' %}" alt="">
+        <h1 class="margin-0 p-absolute">PROVINCIAS DEL ECUADOR</h1>
+    </div>
+    <div class="ancho-max-90">
+        <h2 class="margin-40">Estadísticas de la población</h2>
+        <div class="margin-40">
+            <h4>Provincias</h4>
+            <div class="provincias">
+                <div class="lista-provincias" id="lista-provincias">
+                    <p class="provincia margin-0">Azuay</p>
+                    <p class="provincia margin-0">Bolivar</p>
+                    <p class="provincia margin-0">Cañar</p>
+                    <p class="provincia margin-0">Carchi</p>
+                    <p class="provincia margin-0">Chimborazo</p>
+                    <p class="provincia margin-0">Cotopaxi</p>
+                    <p class="provincia margin-0">El Oro</p>
+                    <p class="provincia margin-0">Esmeraldas</p>
+                    <p class="provincia margin-0">Galápagos</p>
+                    <p class="provincia margin-0">Guayas</p>
+                    <p class="provincia margin-0">Imbabura</p>
+                    <p class="provincia margin-0">Loja</p>
+                    <p class="provincia margin-0">Los Ríos</p>
+                    <p class="provincia margin-0">Manabí</p>
+                    <p class="provincia margin-0">Morona Santiago</p>
+                    <p class="provincia margin-0">Napo</p>
+                    <p class="provincia margin-0">Orellana</p>
+                    <p class="provincia margin-0">Pastaza</p>
+                    <p class="provincia margin-0">Pichincha</p>
+                    <p class="provincia margin-0">Santa Elena</p>
+                    <p class="provincia margin-0">Santo Domingo de los Tsáchilas</p>
+                    <p class="provincia margin-0">Sucumbios</p>
+                    <p class="provincia margin-0">Tungurahua</p>
+                    <p class="provincia margin-0">Zamora Chinchipe</p>
+                </div>
+                <div class="chart">
+                    <canvas id="chart-provincias"></canvas>
+                </div>
+            </div>
+        </div>
+        <h2 class="margin-40">Información por provincia</h2>
+        <div class="detalle-x-provincia margin-40">
+            <select name="todas-provincias" id="todas-provincias">
+                <option selected disabled>Seleccione una provincia</option>
+                <option value="Azuay">Azuay</option>
+                <option value="Bolivar">Bolivar</option>
+                <option value="Cañar">Cañar</option>
+                <option value="Carchi">Carchi</option>
+                <option value="Chimborazo">Chimborazo</option>
+                <option value="Cotopaxi">Cotopaxi</option>
+                <option value="El Oro">El Oro</option>
+                <option value="Esmeraldas">Esmeraldas</option>
+                <option value="Galápagos">Galápagos</option>
+                <option value="Guayas">Guayas</option>
+                <option value="Imbabura">Imbabura</option>
+                <option value="Loja">Loja</option>
+                <option value="Los Ríos">Los Ríos</option>
+                <option value="Manabí">Manabí</option>
+                <option value="Morona Santiago">Morona Santiago</option>
+                <option value="Napo">Napo</option>
+                <option value="Orellana">Orellana</option>
+                <option value="Pastaza">Pastaza</option>
+                <option value="Pichincha">Pichincha</option>
+                <option value="Santa Elena">Santa Elena</option>
+                <option value="Santo Domingo de los Tsáchilas">Santo Domingo de los Tsáchilas</option>
+                <option value="Sucumbios">Sucumbios</option>
+                <option value="Tungurahua">Tungurahua</option>
+                <option value="Zamora Chinchipe">Zamora Chinchipe</option>
+            </select>
+            <h3 class="txt-center" id="nombre-provincia">Azuay</h3>
+            <div class="informacion margin-b-20">
+                <div class="card m-r-17 clr-rojo">
+                    <p class="titulo">Capital</p>
+                    <p id="capital"></p>
+                </div>
+                <div class="card m-r-17 clr-azul">
+                    <p class="titulo">Población total</p>
+                    <p id="poblacion-total">0</p>
+                </div>
+                <div class="card m-r-17 clr-amarillo">
+                    <p class="titulo">Superficie (km2)</p>
+                    <p id="superficie">0</p>
+                </div>
+                <div class="card m-r-17 clr-verde">
+                    <p class="titulo">Total de Hombres</p>
+                    <p id="total-hombres">0</p>
+                </div>
+                <div class="card clr-morado">
+                    <p class="titulo">Total de Mujeres</p>
+                    <p id="total-mujeres">0</p>
+                </div>
+            </div>
+            <div>
+                <h4>Cantones</h4>
+                <div class="cantones">
+                    <div class="lista-cantones" id="lista-cantones">
+                    </div>
+                    <div class="chart" id="addc">
+                        <canvas id="chart-cantones"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+{% block js %}
+<script src="{% static 'js/chart.js' %}"></script>
+<script src="{% static 'js/list_pais.js' %}"></script>
+{% endblock js %}

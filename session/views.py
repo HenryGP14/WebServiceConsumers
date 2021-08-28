@@ -12,3 +12,10 @@ def vwLogin(request):
         return render(request, "auth/login.html")
     else:
         return redirect("index")
+
+
+def vwPais(request):
+    if not request.user.is_authenticated:
+        return render(request, "auth/login.html")
+    else:
+        return render(request, "contents/list_pais.html")

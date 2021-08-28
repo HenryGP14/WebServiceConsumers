@@ -8,9 +8,10 @@ from django.conf.urls.static import static
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    path("", views_global.vwHome, name="index"),
-    path("login/", views_global.vwLogin, name="login"),
-    path("logout/", auth_views.logout_then_login, name="logout"),
     path("admin/", admin.site.urls),
     path("social-auth/", include("social_django.urls", namespace="social")),
+    path("login/", views_global.vwLogin, name="login"),
+    path("logout/", auth_views.logout_then_login, name="logout"),
+    path("", views_global.vwHome, name="index"),
+    path("poblacion", views_global.vwPais, name="poblacion"),
 ]
