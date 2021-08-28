@@ -102,7 +102,7 @@ SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = os.getenv("ID_USER_LINKEDIN")
 SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = os.getenv("SECRET_KEY_LINKEDIN")
 
 
-WSGI_APPLICATION = "DjangoAuth.wsgi.application"
+WSGI_APPLICATION = "WebServiceConsumers.wsgi.application"
 
 
 # Database
@@ -156,6 +156,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = "/static/"
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")  # -- Aquí funciona solo para producción "Descomentar cuando este en producción"
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)  # -- Aquí funciona solo en desarrollo "Comentar o eliminar cuando este en producción"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
