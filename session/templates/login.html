@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}" type="text/css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="login">
+            </div>
+            <p><strong>Iniciar con:</strong></p>
+            <div class="API">
+                <a href="http://127.0.0.1:8000/social-auth/login/github/" class="social github">
+                    <i class="fab fa-github"></i>
+                    Iniciar con GitHub
+                </a>
+                <a href="http://127.0.0.1:8000/social-auth/login/google-oauth2/" class="social google">
+                    <i class="fab fa-google"></i>
+                    Iniciar con Google
+                </a>
+                <a href="http://127.0.0.1:8000/social-auth/login/linkedin-oauth2/" class="social yahoo">
+                    <i class="fab fa-linkedin"></i>
+                    Iniciar con LinkedIn
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

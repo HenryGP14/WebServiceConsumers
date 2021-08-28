@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" type="text/css">
+    <title>Index</title>
+</head>
+
+<body>
+    <header>
+        {% for auth in backends.associated %}
+        {% if auth.provider == 'facebook' %}
+        <nav class="auth facebook">
+            <i class="fab fa-facebook"></i>
+            <div class="option">
+                <div>Hola {{ user.username }} bienvenido a casa!</div>
+                <a href="{% url 'logout' %}" class="logout">Cerrar sesión</a>
+            </div>
+        </nav>
+        {% elif auth.provider == 'github' %}
+        <nav class="auth github">
+            <i class="fab fa-github"></i>
+            <div class="option">
+                <div>Hola {{ user.username }} bienvenido a casa!</div>
+                <a href="{% url 'logout' %}" class="logout">Cerrar sesión</a>
+            </div>
+        </nav>
+        {% elif auth.provider == 'google-oauth2' %}
+        <nav class="auth google">
+            <i class="fab fa-google"></i>
+            <div class="option">
+                <div>Hola {{ user.first_name }} bienvenido a casa!</div>
+                <a href="{% url 'logout' %}" class="logout">Cerrar sesión</a>
+            </div>
+        </nav>
+        {% elif auth.provider == 'linkedin-oauth2' %}
+        <nav class="auth facebook">
+            <i class="fab fa-linkedin"></i>
+            <div class="option">
+                <div>Hola {{ user.first_name }} bienvenido a casa!</div>
+                <a href="{% url 'logout' %}" class="logout">Cerrar sesión</a>
+            </div>
+        </nav>
+        {% endif %}
+        {{ break }}
+        {% endfor %}
+    </header>
+</body>
+
+</html>
