@@ -16,4 +16,5 @@ urlpatterns = [
     path("poblacion", views_global.vwPais, name="poblacion"),
     path("vacunacion", views_global.vwVacunacion, name="vacunacion"),
     path("vacunacion/consular", views_global.vacunacion, name="consulta"),
+    path("sport", views_global.vwSport, name="sport"),
 ]

@@ -36,3 +36,10 @@ def vacunacion(request):
         params = {"cedula": cedula, "nombres": nombres}
         context = {"result": get_LgVacun(params)}
         return render(request, "contents/l_vacunacion.html", context)
+
+
+def vwSport(request):
+    if not request.user.is_authenticated:
+        return render(request, "auth/login.html")
+    else:
+        return render(request, "contents/sport.html")
