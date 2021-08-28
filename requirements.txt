@@ -1,0 +1,4 @@
+django-environ
+python-dotenv
+social-auth-app-django
+psycopg2==2.8.6
