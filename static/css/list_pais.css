@@ -1,0 +1,116 @@
+.container {
+    background-color: rgb(250, 250, 250);
+    color: rgb(20, 20, 20);
+    margin: 0px;
+    padding: 0px;
+}
+
+.margin-0 {
+    margin: 0px;
+}
+
+.margin-40 {
+    margin: 40px;
+    ;
+}
+
+.margin-b-20 {
+    margin-bottom: 20px;
+}
+
+.m-r-17 {
+    margin-right: 17px;
+}
+
+.p-absolute {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+}
+
+.encabezado {
+    background-color: #181a20;
+    color: rgb(250, 250, 250);
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.img-fondo {
+    width: 100%;
+}
+
+.provincias,
+.cantones {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chart {
+    width: 800px;
+    /* height: 530px; */
+    /* background-color: black; */
+}
+
+.informacion {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    border-radius: 10px;
+    padding: 10px 40px;
+    box-shadow: 0px 5px 10px rgb(0 0 0 / 30%);
+    text-align: center;
+    min-width: 85px;
+}
+
+select {
+    width: 300px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    /* margin: 0px 0px 20px 0px; */
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.ancho-max-90 {
+    max-width: 90%;
+    margin: 0px auto;
+}
+
+.clr-rojo {
+    background-color: rgba(255, 99, 132, 0.9);
+}
+
+.clr-azul {
+    background-color: rgba(54, 162, 235, 0.9);
+}
+
+.clr-amarillo {
+    background-color: rgba(255, 206, 86, 0.9);
+}
+
+.clr-verde {
+    background-color: rgba(75, 192, 192, 0.9);
+}
+
+.clr-morado {
+    background-color: rgba(153, 102, 255, 0.9);
+}
+
+.clr-naranja {
+    background-color: rgba(255, 159, 64, 0.9);
+}
+
+@media screen and (max-width: 1200px) {
+    .ancho-max-80 {
+        max-width: 100%;
+    }
+}
