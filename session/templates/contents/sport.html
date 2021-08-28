@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/sport.css' %}">
+{% endblock css %}
+
+{% block content %}
+<div>
+    <div class="header">
+        <div>
+            <div class="img-extra">
+                <img src="{% static '/img/extra/om.png' %}" alt="">
+            </div>
+        </div>
+        <div class="om">
+            <h3>Olimpiadas Tokio 2020</h3>
+        </div>
+    </div>
+    <div class="container">
+        <div class="select-sport">
+            <div class="img-country">
+                <img id="img_pais" src="{% static '/img/paises/all.png' %}" alt="">
+            </div>
+            <div>
+                <select name="country" id="country">
+                    <option disabled selected>Seleccione un país</option>
+                </select>
+            </div>
+        </div>
+        <div class="select-medals">
+            <div class="img-medal">
+                <img id="img_medal" src="{% static '/img/medals/all.png' %}" alt="">
+            </div>
+            <div>
+                <select name="medal" id="medal">
+                    <option disabled selected>Seleccione la medalla que ha ganado el país</option>
+                </select>
+            </div>
+        </div>
+
+        <h1>Participantes</h1>
+        <div class="card">
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+{% block js %}
+<script src="{% static 'js/sport.js' %}"></script>
+{% endblock js %}

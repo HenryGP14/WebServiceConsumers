@@ -1,0 +1,110 @@
+.header {
+  height: 70px;
+  background-color: #eeeeee;
+  display: flex;
+  align-items: center;
+}
+
+.header .img-extra {
+  width: 100px;
+  margin: 0 20px;
+}
+
+.header .om {
+  color: rgb(68, 68, 68);
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.container {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.container .select-sport {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.container .select-sport .img-country {
+  width: 60px;
+  margin-right: 10px;
+}
+
+.container .select-sport #country {
+  width: 300px;
+  height: 35px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.container .select-medals {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .select-medals .img-medal {
+  width: 50px;
+  margin-right: 15px;
+}
+
+.container .select-medals #medal {
+  width: 300px;
+  height: 35px;
+}
+
+.container .card {
+  margin-top: 20px;
+  display: grid;
+}
+
+.container .card .card-people .img-people {
+  width: 150px;
+}
+
+@media (min-width: 440px) {
+  .container .card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 550px) {
+  .container .card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 600px) {
+  .container .card {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 800px) {
+  .container .card {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .container .card {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .container .card {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (min-width: 1450px) {
+  .container .card {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
