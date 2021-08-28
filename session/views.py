@@ -9,6 +9,6 @@ def vwHome(request):
 
 def vwLogin(request):
     if not request.user.is_authenticated:
-        return render(request, "login.html")
+        return render(request, "auth/login.html")
     else:
         return redirect("index")
