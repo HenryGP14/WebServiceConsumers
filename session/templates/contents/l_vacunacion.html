@@ -1,0 +1,62 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock css %}
+
+{% block content %}
+<div class="container">
+    <div class="title">
+        CONSULTA TU CENTRO DE VACUNACIÓN
+    </div>
+
+    <div class="card">
+        <form method="POST" action="{% url 'consulta' %}" id="form_data">
+            {% csrf_token %}
+            <div class="text">
+                <label for="cedula">Cédula</label>
+                <input class="cedula" id="cedula" name="cedula" type="text" placeholder="Cédula*" maxlength="10">
+            </div>
+            <div class="text">
+                <label for="nombres">Nombres</label>
+                <input class="nombres" id="nombres" name="nombres" type="text"
+                    placeholder="Ejem. Juan Jacinto Gonzales Moreira">
+            </div>
+            <div class="term">
+                <p>Recuerda las medidas de bioseguridad.Usa mascarilla y mantén la distancia de dos metros con otras
+                    personas.</p>
+                <p>Infórmate por medios oficiales y sigue las recomendaciones dada por el ministerio de salud.</p>
+            </div>
+            <div class="button">
+                <button type="submit" id="consulta" class="btn">Consulta</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% if result %}
+<div class="modal" id="myModal">
+    <div class="modal-content">
+        <div>
+            <p><strong>Nombre: </strong><span id="nombre">{{ result.nombres }}</span></p>
+            <p><strong>Provincia: </strong><span id="canton">{{ result.provincia }}</span></p>
+            <p><strong>Cantón: </strong><span id="parroquia">{{ result.canton }}</span></p>
+            <p><strong>Centro de vacunación: </strong><span id="centro">{{ result.centro_vacunacion }}</span></p>
+            <p><strong>Dirección: </strong><span id="direccion">{{ result.direccion }}</span></p>
+            <p><strong>Primera dosis: </strong><span id="pr-dosis">{{ result.primera_dosis }}</span></p>
+            <p><strong>Segunda dosis: </strong><span id="sc-dosis">{{ result.segunda_dosis }}</span></p>
+        </div>
+        <div class="button">
+            <button type="button" id="aceptar" class="btn">Aceptar</button>
+        </div>
+    </div>
+</div>
+{% else %}
+<p style="color:red;">!Error¡ Ciudadano no encontrado</p>
+{% endif %}
+</div>
+{% endblock content %}
+
+{% block js %}
+<script src="{% static 'js/modal.js' %}"></script>
+{% endblock js %}
