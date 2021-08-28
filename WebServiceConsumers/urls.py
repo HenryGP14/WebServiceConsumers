@@ -14,4 +14,6 @@ urlpatterns = [
     path("logout/", auth_views.logout_then_login, name="logout"),
     path("", views_global.vwHome, name="index"),
     path("poblacion", views_global.vwPais, name="poblacion"),
+    path("vacunacion", views_global.vwVacunacion, name="vacunacion"),
+    path("vacunacion/consular", views_global.vacunacion, name="consulta"),
 ]
