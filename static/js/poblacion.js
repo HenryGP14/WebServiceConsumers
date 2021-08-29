@@ -5,7 +5,7 @@ var dataProv = [];
 $.ajax({
     type: "GET",
     contentType: "application/json; charset=utf-8",
-    url: "http://localhost:8000/WebService",
+    url: "http://192.168.56.1:3000/src",
     dataType: "json",
     success: function (data) {
         data.forEach((element) => {
@@ -31,7 +31,7 @@ selecProvincias.addEventListener("change", (event) => {
     $.ajax({
         type: "GET",
         contentType: "application/json; charset=utf-8",
-        url: "http://localhost:8000/WebService?nom-provincia=" + provincia,
+        url: "http://192.168.56.1:3000/src?nom-provincia=" + provincia,
         dataType: "json",
         success: function (data) {
             var listaCatones = document.getElementById("lista-cantones");
@@ -118,7 +118,7 @@ function mostrarDatosProvincia(event) {
     $.ajax({
         type: "GET",
         contentType: "application/json; charset=utf-8",
-        url: "http://localhost:8000/WebService?provincia=" + event,
+        url: "http://192.168.56.1:3000/src?provincia=" + event,
         dataType: "json",
         success: function (data) {
             nombreprovincia.innerHTML =
